@@ -1,0 +1,16 @@
+PODS:
+  - JASidePanels (1.3.2)
+  - MKNetworkKit (0.87):
+    - Reachability (~> 3.1.0)
+  - Reachability (3.1.1)
+
+DEPENDENCIES:
+  - JASidePanels (~> 1.3.2)
+  - MKNetworkKit
+
+SPEC CHECKSUMS:
+  JASidePanels: c0e642a7311ec9cc9adfa616fa4a795e4e169f20
+  MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14
+  Reachability: be4883bb93f31e38266ae3365e5600a317aae735
+
+COCOAPODS: 0.29.0

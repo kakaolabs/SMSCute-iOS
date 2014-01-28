@@ -21,7 +21,6 @@
 		E74A7F931894F7E700E5BEEB /* APIEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A7F921894F7E700E5BEEB /* APIEngine.m */; };
 		E74A7FAB1894FE0000E5BEEB /* CustomFontUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A7FA81894FE0000E5BEEB /* CustomFontUILabel.m */; };
 		E74A7FAC1894FE0000E5BEEB /* UIViewController+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A7FAA1894FE0000E5BEEB /* UIViewController+Font.m */; };
-		E74A7FDB1894FE1400E5BEEB /* UIFont+IBCustomFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A7FAE1894FE1400E5BEEB /* UIFont+IBCustomFonts.m */; };
 		E74A7FDC1894FE1400E5BEEB /* SystemServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A7FB11894FE1400E5BEEB /* SystemServices.m */; };
 		E74A7FDD1894FE1400E5BEEB /* NSObject+PerformBlockAfterDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A7FB41894FE1400E5BEEB /* NSObject+PerformBlockAfterDelay.m */; };
 		E74A7FDE1894FE1400E5BEEB /* SSAccelerometerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E74A7FB61894FE1400E5BEEB /* SSAccelerometerInfo.m */; };
@@ -136,7 +135,6 @@
 		E74A7FA81894FE0000E5BEEB /* CustomFontUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontUILabel.m; sourceTree = "<group>"; };
 		E74A7FA91894FE0000E5BEEB /* UIViewController+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Font.h"; sourceTree = "<group>"; };
 		E74A7FAA1894FE0000E5BEEB /* UIViewController+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Font.m"; sourceTree = "<group>"; };
-		E74A7FAE1894FE1400E5BEEB /* UIFont+IBCustomFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+IBCustomFonts.m"; sourceTree = "<group>"; };
 		E74A7FB01894FE1400E5BEEB /* SystemServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemServices.h; sourceTree = "<group>"; };
 		E74A7FB11894FE1400E5BEEB /* SystemServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemServices.m; sourceTree = "<group>"; };
 		E74A7FB31894FE1400E5BEEB /* NSObject+PerformBlockAfterDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlockAfterDelay.h"; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 		E74A7F331894A36F00E5BEEB /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				E74A7FAD1894FE1400E5BEEB /* IBCustomFonts */,
 				E74A7FAF1894FE1400E5BEEB /* System Services */,
 				E74A7FD21894FE1400E5BEEB /* UUID */,
 			);
@@ -339,15 +336,6 @@
 			);
 			name = Fonts;
 			path = TinNhanYeuThuong/Libraries/Fonts;
-			sourceTree = "<group>";
-		};
-		E74A7FAD1894FE1400E5BEEB /* IBCustomFonts */ = {
-			isa = PBXGroup;
-			children = (
-				E74A7FAE1894FE1400E5BEEB /* UIFont+IBCustomFonts.m */,
-			);
-			name = IBCustomFonts;
-			path = TinNhanYeuThuong/Vendors/IBCustomFonts;
 			sourceTree = "<group>";
 		};
 		E74A7FAF1894FE1400E5BEEB /* System Services */ = {
@@ -814,7 +802,6 @@
 				E74A7F931894F7E700E5BEEB /* APIEngine.m in Sources */,
 				E74A7FEB1894FE1400E5BEEB /* SSUUID.m in Sources */,
 				E74A7FDF1894FE1400E5BEEB /* SSAccessoryInfo.m in Sources */,
-				E74A7FDB1894FE1400E5BEEB /* UIFont+IBCustomFonts.m in Sources */,
 				E74A7FE11894FE1400E5BEEB /* SSBatteryInfo.m in Sources */,
 				E74A7FE91894FE1400E5BEEB /* SSProcessInfo.m in Sources */,
 				E74A7FEC1894FE1400E5BEEB /* Appota_OpenUDID.m in Sources */,

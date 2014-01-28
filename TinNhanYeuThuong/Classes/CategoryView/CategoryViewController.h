@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  CategoryViewController.h
 //  TinNhanYeuThuong
 //
 //  Created by Kien Nguyen on 1/27/14.
@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface HomeViewController : BaseViewController
+@interface CategoryViewController : BaseViewController {
+    NSDictionary *data;
+}
 
+- (id) initWithData:(NSDictionary *) data;
 @end

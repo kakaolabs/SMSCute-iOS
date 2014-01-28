@@ -1,3 +1,7 @@
+# Pods file
+###################
+Pods/*
+
 # Compiled source #
 ###################
 *.com

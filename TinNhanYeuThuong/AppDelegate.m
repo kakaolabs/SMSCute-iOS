@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "JASidePanelController.h"
 #import "LeftMenuViewController.h"
-#import "HomeViewController.h"
+#import "MainViewController.h"
 
 @implementation AppDelegate
 
@@ -19,16 +19,16 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     self.viewController = [[JASidePanelController alloc] init];
-    self.viewController.shouldDelegateAutorotateToVisiblePanel = NO;
+    self.viewController.panningLimitedToTopViewController = NO;
     
     LeftMenuViewController *leftMenuVC = [[LeftMenuViewController alloc] init];
     leftMenuVC.viewController = self.viewController;
     
-    HomeViewController *homeVC = [[HomeViewController alloc] init];
-    homeVC.viewController = self.viewController;
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    mainVC.viewController = self.viewController;
     
     self.viewController.leftPanel = leftMenuVC;
-    self.viewController.centerPanel = homeVC;
+    self.viewController.centerPanel = mainVC;
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];

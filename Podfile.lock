@@ -1,4 +1,11 @@
 PODS:
+  - BRORM (0.4):
+    - FMDB (~> 2.0)
+  - FMDB (2.2):
+    - FMDB/standard
+  - FMDB/common (2.2)
+  - FMDB/standard (2.2):
+    - FMDB/common
   - JASidePanels (1.3.2)
   - JSONKit (1.5pre2)
   - MKNetworkKit (0.87):
@@ -6,6 +13,7 @@ PODS:
   - Reachability (3.1.1)
 
 DEPENDENCIES:
+  - BRORM (~> 0.4)
   - JASidePanels (~> 1.3.2)
   - JSONKit (from `git@github.com:matsu911/JSONKit.git`)
   - MKNetworkKit (~> 0.87)
@@ -15,6 +23,8 @@ EXTERNAL SOURCES:
     :git: git@github.com:matsu911/JSONKit.git
 
 SPEC CHECKSUMS:
+  BRORM: 56f78a2b47bb7b0f6e3eca906824ee9d1139b546
+  FMDB: 97472cfacf0d9e445e915704fb43b4b142799c36
   JASidePanels: c0e642a7311ec9cc9adfa616fa4a795e4e169f20
   JSONKit: 3e7d44ff15bf084f831c6e15d22aae16de9a003b
   MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14

@@ -12,13 +12,14 @@
 
 @end
 
+
 @implementation TextViewController
 
 - (id) initWIthText:(NSString *)_text
 {
     self = [super initWithNibName:@"TextViewController" bundle:nil];
     if (self) {
-        text = _text;
+        text = [NSString stringWithFormat:@"\n\n\n\n%@", _text];
     }
     return self;
 }

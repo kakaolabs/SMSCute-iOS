@@ -7,6 +7,7 @@
 //
 
 #import "APIEngine+SMS.h"
+#import "DBEngine.h"
 #import "SMSViewController.h"
 #import "SubcategoryViewCell.h"
 #import "SubcategoryViewController.h"
@@ -33,17 +34,45 @@
           forCellReuseIdentifier:@"SubcategoryViewCell"];
     categoriesTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
+    [self loadSMSContentFromDB];
     [self requestToGetSubcategoryDetail];
+}
+
+- (void) loadSMSContentFromDB
+{
+    DBEngine *db = [DBEngine sharedEngine];
+    [db open];
+    
+    listItem = [[NSMutableArray alloc] initWithArray:[db getSMSForCategory:subCategoryId]];
+    [categoriesTable reloadData];
+    
+    [db close];
+}
+
+- (void) insertSMSToDB
+{
+    DBEngine *db = [DBEngine sharedEngine];
+    [db open];
+    
+    for (NSDictionary *dict in listItem) {
+        [db insertSMSWithDict:dict categoryId:subCategoryId];
+    }
+    
+    [db close];
 }
 
 #pragma mark - Request
 - (void) requestToGetSubcategoryDetail {
     [[APIEngine sharedEngine] getDetailOfSubCategory:subCategoryId onComplete:^(id objects) {
+        [listItem removeAllObjects];
+        
         NSArray *items = (NSArray *) objects;
         for (NSDictionary *item in items) {
             [listItem addObject:item];
         }
         [categoriesTable reloadData];
+        
+        [self insertSMSToDB];
     } onError:^(NSError *error) {
     }];
 }

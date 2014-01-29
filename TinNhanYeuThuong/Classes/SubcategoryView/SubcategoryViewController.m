@@ -71,9 +71,11 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *data = listItem[indexPath.row];
-    NSString *content = data[@"content"];
-    SMSViewController *controller = [[SMSViewController alloc] initWithContent:content];
-    [self.navigationController pushViewController:controller animated:YES];
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+    SMSViewController *controller = [[SMSViewController alloc] initWithData:listItem atIndex:(int) indexPath.row];
+    [self presentViewController:controller animated:YES completion:^{}];
+    //[self.navigationController pushViewController:controller animated:YES];
 }
+
 @end

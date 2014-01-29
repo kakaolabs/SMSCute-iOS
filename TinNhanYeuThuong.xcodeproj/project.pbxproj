@@ -80,6 +80,7 @@
 		E74E870E1897571D00BF4E6A /* white-home-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E74E86EC1897571D00BF4E6A /* white-home-menu@2x.png */; };
 		E74E870F1897571D00BF4E6A /* white-recently-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E74E86ED1897571D00BF4E6A /* white-recently-menu.png */; };
 		E74E87101897571D00BF4E6A /* white-recently-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E74E86EE1897571D00BF4E6A /* white-recently-menu@2x.png */; };
+		E75E02D51898B10C00961FF3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75E02D41898B10C00961FF3 /* MessageUI.framework */; };
 		E76650D31896213800F90814 /* NSString+sha1.m in Sources */ = {isa = PBXBuildFile; fileRef = E76650D21896213800F90814 /* NSString+sha1.m */; };
 		E76650D61896366600F90814 /* APIEngine+SMS.m in Sources */ = {isa = PBXBuildFile; fileRef = E76650D51896366600F90814 /* APIEngine+SMS.m */; };
 		E76650E418965C9D00F90814 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76650E118965C9D00F90814 /* CategoryViewController.m */; };
@@ -218,6 +219,7 @@
 		E74E86EC1897571D00BF4E6A /* white-home-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-home-menu@2x.png"; sourceTree = "<group>"; };
 		E74E86ED1897571D00BF4E6A /* white-recently-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-recently-menu.png"; sourceTree = "<group>"; };
 		E74E86EE1897571D00BF4E6A /* white-recently-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-recently-menu@2x.png"; sourceTree = "<group>"; };
+		E75E02D41898B10C00961FF3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E76650D11896213800F90814 /* NSString+sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+sha1.h"; sourceTree = "<group>"; };
 		E76650D21896213800F90814 /* NSString+sha1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+sha1.m"; sourceTree = "<group>"; };
 		E76650D41896366600F90814 /* APIEngine+SMS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APIEngine+SMS.h"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75E02D51898B10C00961FF3 /* MessageUI.framework in Frameworks */,
 				E732E5541896721A00409B4E /* QuartzCore.framework in Frameworks */,
 				E793176D18925E2B00E312FF /* CoreGraphics.framework in Frameworks */,
 				E793176F18925E2B00E312FF /* UIKit.framework in Frameworks */,
@@ -524,6 +527,7 @@
 		E793176918925E2B00E312FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E75E02D41898B10C00961FF3 /* MessageUI.framework */,
 				E732E5531896721A00409B4E /* QuartzCore.framework */,
 				E793176A18925E2B00E312FF /* Foundation.framework */,
 				E793176C18925E2B00E312FF /* CoreGraphics.framework */,

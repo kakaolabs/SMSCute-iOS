@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class JASidePanelController;
+@class MainViewController;
 
 @interface LeftMenuViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
     IBOutlet UITableView *menuTable;
@@ -19,5 +20,6 @@
 }
 
 @property (strong, nonatomic) JASidePanelController *viewController;
+@property (strong, nonatomic) MainViewController *mainVC;
 
 @end

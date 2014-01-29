@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 kakaolabs. All rights reserved.
 //
 
+#import "JASidePanelController.h"
+#import "MainViewController.h"
 #import "LeftMenuViewController.h"
 #import "LeftMenuTableViewCell.h"
 
@@ -75,6 +77,15 @@
 {
     selectedIndex = (int) indexPath.row;
     [tableView reloadData];
+    
+    switch (selectedIndex) {
+        case 0:
+            [self.mainVC changeToHome];
+            [self.viewController showCenterPanelAnimated:YES];
+            break;
+        default:
+            break;
+    }
 }
 
 @end

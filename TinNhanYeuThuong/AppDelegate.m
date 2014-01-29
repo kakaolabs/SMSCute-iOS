@@ -21,11 +21,12 @@
     self.viewController = [[JASidePanelController alloc] init];
     self.viewController.panningLimitedToTopViewController = NO;
     
-    LeftMenuViewController *leftMenuVC = [[LeftMenuViewController alloc] init];
-    leftMenuVC.viewController = self.viewController;
-    
     MainViewController *mainVC = [[MainViewController alloc] init];
     mainVC.viewController = self.viewController;
+    
+    LeftMenuViewController *leftMenuVC = [[LeftMenuViewController alloc] init];
+    leftMenuVC.mainVC = mainVC;
+    leftMenuVC.viewController = self.viewController;
     
     self.viewController.leftPanel = leftMenuVC;
     self.viewController.centerPanel = mainVC;

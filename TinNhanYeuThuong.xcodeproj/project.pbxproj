@@ -81,6 +81,8 @@
 		E74E870F1897571D00BF4E6A /* white-recently-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E74E86ED1897571D00BF4E6A /* white-recently-menu.png */; };
 		E74E87101897571D00BF4E6A /* white-recently-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E74E86EE1897571D00BF4E6A /* white-recently-menu@2x.png */; };
 		E75E02D51898B10C00961FF3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75E02D41898B10C00961FF3 /* MessageUI.framework */; };
+		E75E02D81898C6A200961FF3 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75E02D71898C6A200961FF3 /* TextViewController.m */; };
+		E75E02DA1898C6B300961FF3 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75E02D91898C6B300961FF3 /* TextViewController.xib */; };
 		E76650D31896213800F90814 /* NSString+sha1.m in Sources */ = {isa = PBXBuildFile; fileRef = E76650D21896213800F90814 /* NSString+sha1.m */; };
 		E76650D61896366600F90814 /* APIEngine+SMS.m in Sources */ = {isa = PBXBuildFile; fileRef = E76650D51896366600F90814 /* APIEngine+SMS.m */; };
 		E76650E418965C9D00F90814 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76650E118965C9D00F90814 /* CategoryViewController.m */; };
@@ -220,6 +222,9 @@
 		E74E86ED1897571D00BF4E6A /* white-recently-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-recently-menu.png"; sourceTree = "<group>"; };
 		E74E86EE1897571D00BF4E6A /* white-recently-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-recently-menu@2x.png"; sourceTree = "<group>"; };
 		E75E02D41898B10C00961FF3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E75E02D61898C6A200961FF3 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		E75E02D71898C6A200961FF3 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
+		E75E02D91898C6B300961FF3 /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
 		E76650D11896213800F90814 /* NSString+sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+sha1.h"; sourceTree = "<group>"; };
 		E76650D21896213800F90814 /* NSString+sha1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+sha1.m"; sourceTree = "<group>"; };
 		E76650D41896366600F90814 /* APIEngine+SMS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APIEngine+SMS.h"; sourceTree = "<group>"; };
@@ -473,6 +478,9 @@
 				E74E86651896C96D00BF4E6A /* SMSViewController.h */,
 				E74E86661896C96D00BF4E6A /* SMSViewController.m */,
 				E74E86681896CA3900BF4E6A /* SMSViewController.xib */,
+				E75E02D61898C6A200961FF3 /* TextViewController.h */,
+				E75E02D71898C6A200961FF3 /* TextViewController.m */,
+				E75E02D91898C6B300961FF3 /* TextViewController.xib */,
 			);
 			name = SMSView;
 			path = Classes/SMSView;
@@ -732,6 +740,7 @@
 				E74E87021897571D00BF4E6A /* offline-touch-hovercard@2x.png in Resources */,
 				E74E87031897571D00BF4E6A /* offlineon-toolbar.png in Resources */,
 				E74E86F21897571D00BF4E6A /* fav-menu@2x.png in Resources */,
+				E75E02DA1898C6B300961FF3 /* TextViewController.xib in Resources */,
 				E74E870A1897571D00BF4E6A /* spinner@2x.png in Resources */,
 				E74E87101897571D00BF4E6A /* white-recently-menu@2x.png in Resources */,
 				E7E49E4518949B20000884BE /* ProximaNova-Bold.ttf in Resources */,
@@ -816,6 +825,7 @@
 				E74A7FE61894FE1400E5BEEB /* SSLocalizationInfo.m in Sources */,
 				E74E86671896C96D00BF4E6A /* SMSViewController.m in Sources */,
 				E74A7FDD1894FE1400E5BEEB /* NSObject+PerformBlockAfterDelay.m in Sources */,
+				E75E02D81898C6A200961FF3 /* TextViewController.m in Sources */,
 				E74A7FEA1894FE1400E5BEEB /* SSProcessorInfo.m in Sources */,
 				E74A7F2118949F3E00E5BEEB /* LeftMenuViewController.m in Sources */,
 				E74A7FAB1894FE0000E5BEEB /* CustomFontUILabel.m in Sources */,

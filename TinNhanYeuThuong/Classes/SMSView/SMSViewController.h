@@ -10,12 +10,15 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-@interface SMSViewController : UIViewController<UIGestureRecognizerDelegate, MFMessageComposeViewControllerDelegate> {
+@interface SMSViewController : UIViewController<MFMessageComposeViewControllerDelegate, UIPageViewControllerDataSource> {
+    
     IBOutlet UIButton *closeButton;
     IBOutlet UITextView *textView;
     IBOutlet UIButton *shareButton;
     IBOutlet UIButton *likeButton;
     IBOutlet UIButton *convertButton;
+    
+    UIPageViewController *pageController;
     
     NSArray *data;
     int index;
@@ -25,6 +28,5 @@
 - (IBAction) closeButtonPressed:(id) sender;
 - (IBAction) shareButtonPressed:(id) sender;
 - (IBAction) likeButtonPressed:(id) sender;
-- (IBAction) handlePan:(UIPanGestureRecognizer *)recognizer;
 
 @end

@@ -9,6 +9,7 @@
 #import <MessageUI/MessageUI.h>
 #import "JASidePanelController.h"
 #import "MainViewController.h"
+#import "TextViewController.h"
 #import "SMSViewController.h"
 
 @implementation SMSViewController
@@ -24,12 +25,30 @@
     return self;
 }
 
+- (void) setUpPageViewContorller
+{
+    pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    
+    pageController.dataSource = self;
+    CGSize size = self.view.frame.size;
+    [[pageController view] setFrame:CGRectMake(0, 70, size.width, size.height - 70)];
+    
+    TextViewController *initialViewController = [[TextViewController alloc] initWIthText:data[index][@"content"]];
+    
+    NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
+    
+    [pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    [self addChildViewController:pageController];
+    [[self view] addSubview:[pageController view]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setUpPageViewContorller];
     textView.text = data[index][@"content"];
 }
-
 
 #pragma mark - Handle button
 - (IBAction) closeButtonPressed:(id) sender
@@ -54,59 +73,13 @@
 
 }
 
-#pragma mark - Gesture handle
--(BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
-    CGPoint translation = [gestureRecognizer translationInView:self.view];
-    
-    // Check for horizontal gesture
-    if (fabsf(translation.x) > fabsf(translation.y)) {
-        return YES;
-    }
-    return NO;
-}
-
-- (UITextView *) createNewTextViewWithText:(NSString *) text
-{
-    UITextView *newTextView = [[UITextView alloc] initWithFrame:textView.frame];
-    newTextView.backgroundColor = [UIColor clearColor];
-    newTextView.font = textView.font;
-    newTextView.textColor = textView.textColor;
-    newTextView.editable = NO;
-    newTextView.text = text;
-    return newTextView;
-}
-
-- (void)  transitionToNewTextView:(UITextView *) newTextView isFromLeftToRight:(BOOL) isTransitionFromLeft
-{
-    CATransition *transition = [CATransition animation];
-    transition.duration = 0.5;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = @"cube";
-    transition.subtype = isTransitionFromLeft ? kCATransitionFromLeft : kCATransitionFromRight;
-    [self.view.layer addAnimation:transition forKey:nil];
-    
-    [self.view addSubview:newTextView];
-    [textView removeFromSuperview];
-    textView = newTextView;
-}
-
-- (IBAction) handlePan:(UIPanGestureRecognizer *)recognizer
-{
-    if (recognizer.state == UIGestureRecognizerStateEnded) {
-        // set up new text view
-        int newIndex = (index + 1) % data.count;
-        NSString *newText = data[newIndex][@"content"];
-        UITextView *newTextView = [self createNewTextViewWithText:newText];
-        index = newIndex;
-        
-        // do transition animation
-        CGPoint velocity = [recognizer velocityInView:self.view];
-        BOOL isTransitionFromLeft = velocity.x > 0;
-        [self transitionToNewTextView:newTextView isFromLeftToRight:isTransitionFromLeft];
-    }
-}
-
 # pragma mark - SMS handle
+- (UIViewController *) viewControllerAtIndex:(int) i
+{
+    TextViewController *controller = [[TextViewController alloc] initWIthText:data[i][@"content"]];
+    return controller;
+}
+
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
 	switch (result) {
@@ -129,4 +102,30 @@
 	}
     [controller dismissViewControllerAnimated:YES completion:^{}];
 }
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    if (index == 0) {
+        return nil;
+    }
+    
+    // Decrease the index by 1 to return
+    --index;
+    
+    return [self viewControllerAtIndex:index];
+    
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    index++;
+    
+    if (index == data.count) {
+        return nil;
+    }
+    
+    return [self viewControllerAtIndex:index];
+    
+}
+
 @end

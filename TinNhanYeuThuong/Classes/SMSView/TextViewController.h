@@ -13,5 +13,7 @@
     IBOutlet UITextView *textView;
 }
 
-- (id) initWIthText:(NSString *) _text;
+@property (readwrite) int index;
+
+- (id) initWithText:(NSString *) _text withIndex:(int) i;
 @end

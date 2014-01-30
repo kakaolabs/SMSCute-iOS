@@ -25,11 +25,11 @@
     contentText.text = data[@"content"];
     
     if (isSelected) {
-        self.backgroundColor = [UIColor colorWithRed:0/255 green:89.0/255 blue:107.0/255 alpha:1.0];
+        self.backgroundColor = SELECTED_BACKGROUND_COLOR;
         contentText.textColor = [UIColor whiteColor];
     } else {
         self.backgroundColor = [UIColor clearColor];
-        contentText.textColor = [UIColor colorWithRed:20.0/255 green:108.0/255 blue:136.0/255 alpha:1.0];
+        contentText.textColor = TEXT_COLOR;
     }
 
 }

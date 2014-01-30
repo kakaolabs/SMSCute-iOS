@@ -17,9 +17,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    logoImageView.hidden = NO;
     titleLabel.text = @"HOME";
-    
+    [self reloadView];
+}
+
+- (void) reloadView
+{
     [self loadCategoriesFromDB];
     [self requestToGetAllCategories];
 }

@@ -10,13 +10,14 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-@interface SMSViewController : UIViewController<MFMessageComposeViewControllerDelegate, UIPageViewControllerDataSource> {
+@interface SMSViewController : UIViewController<MFMessageComposeViewControllerDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
     
     IBOutlet UIButton *closeButton;
-    IBOutlet UITextView *textView;
     IBOutlet UIButton *shareButton;
     IBOutlet UIButton *likeButton;
     IBOutlet UIButton *convertButton;
+    IBOutlet UIView *messageView;
+    IBOutlet UILabel *messageLabel;
     
     UIPageViewController *pageController;
     

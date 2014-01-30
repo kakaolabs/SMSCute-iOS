@@ -10,4 +10,8 @@
 
 @interface HomeViewController : BaseViewController
 
+- (void) reloadView;
+- (void) loadCategoriesFromDB;
+- (void) requestToGetAllCategories;
+
 @end

@@ -83,6 +83,14 @@
             [self.mainVC changeToHome];
             [self.viewController showCenterPanelAnimated:YES];
             break;
+        case 1:
+            [self.mainVC changeToRecentView];
+            [self.viewController showCenterPanelAnimated:YES];
+            break;
+        case 2:
+            [self.mainVC changeToFavouriteView];
+            [self.viewController showCenterPanelAnimated:YES];
+            break;
         default:
             break;
     }

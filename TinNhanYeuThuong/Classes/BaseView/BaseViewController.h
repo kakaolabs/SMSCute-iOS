@@ -13,7 +13,6 @@
 @interface BaseViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
     IBOutlet UIButton *leftButton;
     IBOutlet UILabel *titleLabel;
-    IBOutlet UIImageView *logoImageView;
     IBOutlet UITableView *categoriesTable;
     
     int selectedIndex;

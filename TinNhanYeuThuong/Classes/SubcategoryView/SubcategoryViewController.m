@@ -34,6 +34,11 @@
           forCellReuseIdentifier:@"SubcategoryViewCell"];
     categoriesTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
+    [self reloadView];
+}
+
+- (void) reloadView
+{
     [self loadSMSContentFromDB];
     [self requestToGetSubcategoryDetail];
 }

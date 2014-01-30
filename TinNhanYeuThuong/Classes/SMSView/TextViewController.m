@@ -8,18 +8,16 @@
 
 #import "TextViewController.h"
 
-@interface TextViewController ()
-
-@end
-
 
 @implementation TextViewController
+@synthesize index;
 
-- (id) initWIthText:(NSString *)_text
+- (id) initWithText:(NSString *)_text withIndex:(int)i
 {
     self = [super initWithNibName:@"TextViewController" bundle:nil];
     if (self) {
-        text = [NSString stringWithFormat:@"\n\n\n\n%@", _text];
+        text = [NSString stringWithFormat:@"\n\n\n\n%@\n\n\n\n\n", _text];
+        self.index = i;
     }
     return self;
 }

@@ -10,6 +10,8 @@
 #import "JASidePanelController.h"
 
 #import "HomeViewController.h"
+#import "FavViewController.h"
+#import "RecentUsedViewController.h"
 #import "MainViewController.h"
 
 @implementation MainViewController
@@ -51,13 +53,40 @@
      [self.viewController showLeftPanelAnimated:YES];
 }
 
+- (void) setRootView:(UIViewController *) controller
+{
+    [self popToRootViewControllerAnimated:NO];
+    [self setViewControllers:[NSArray arrayWithObjects:controller, nil]];
+}
+
 - (void) changeToHome
 {
     if (!homeVC) {
         homeVC = [[HomeViewController alloc] initWithNibName:@"BaseViewController" bundle:nil];
     }
-    [self popToRootViewControllerAnimated:NO];
-    [self setViewControllers:[NSArray arrayWithObjects:homeVC, nil]];
+    [homeVC reloadView];
+    
+    [self setRootView:homeVC];
+}
+
+- (void) changeToFavouriteView
+{
+    if (!favVC) {
+        favVC = [[FavViewController alloc] initWithNibName:@"BaseViewController" bundle:nil];
+    }
+    [favVC reloadView];
+    
+    [self setRootView:favVC];
+}
+
+- (void) changeToRecentView
+{
+    if (!recentVC) {
+        recentVC = [[RecentUsedViewController alloc] initWithNibName:@"BaseViewController" bundle:nil];
+    }
+    [recentVC reloadView];
+    
+    [self setRootView:recentVC];
 }
 
 @end

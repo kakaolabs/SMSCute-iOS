@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class HomeViewController;
 @class JASidePanelController;
+@class HomeViewController;
+@class FavViewController;
+@class RecentUsedViewController;
 
 @interface MainViewController : UINavigationController {
     HomeViewController *homeVC;
+    FavViewController *favVC;
+    RecentUsedViewController *recentVC;
 }
 
 @property (strong, nonatomic) JASidePanelController *viewController;
@@ -21,5 +25,6 @@
 
 - (void) showLeftMenu;
 - (void) changeToHome;
-
+- (void) changeToFavouriteView;
+- (void) changeToRecentView;
 @end

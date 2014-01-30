@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="categoriesTable" destination="AWe-0o-QBH" id="DM0-lv-4qy"/>
                 <outlet property="leftButton" destination="yST-ln-ddM" id="cae-ow-70h"/>
-                <outlet property="logoImageView" destination="UbG-Kh-FYo" id="Oap-v0-JVZ"/>
                 <outlet property="titleLabel" destination="fmi-aC-jbk" id="pvb-Rf-Gvn"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -34,10 +33,15 @@
                                 <action selector="menuButtonPressed:" destination="-1" eventType="touchUpInside" id="tH5-xJ-M1w"/>
                             </connections>
                         </button>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header-logo.png" id="UbG-Kh-FYo">
-                            <rect key="frame" x="236" y="17" width="59" height="15"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t3S-By-bWQ">
+                            <rect key="frame" x="270" y="0.0" width="50" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                            <color key="backgroundColor" red="0.1019607843" green="0.34901960780000002" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" image="search-btn.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fmi-aC-jbk" customClass="CustomFontUILabel">
                             <rect key="frame" x="77" y="14" width="146" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,7 +70,7 @@
         </view>
     </objects>
     <resources>
-        <image name="header-logo.png" width="59" height="15"/>
         <image name="menu-open.png" width="20" height="15"/>
+        <image name="search-btn.png" width="15" height="15"/>
     </resources>
 </document>

@@ -28,12 +28,12 @@
 {
     nameLabel.text = text;
     if (isSelected) {
-        self.backgroundColor = [UIColor colorWithRed:0/255 green:89.0/255 blue:107.0/255 alpha:1.0];
+        self.backgroundColor = SELECTED_BACKGROUND_COLOR;
         nameLabel.textColor = [UIColor whiteColor];
         imagePath = [NSString stringWithFormat:@"white-%@", imagePath];
     } else {
         self.backgroundColor = [UIColor clearColor];
-        nameLabel.textColor = [UIColor colorWithRed:20.0/255 green:108.0/255 blue:136.0/255 alpha:1.0];
+        nameLabel.textColor = TEXT_COLOR;
         
     }
     [iconImage setImage:[UIImage imageNamed:imagePath]];

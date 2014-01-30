@@ -14,5 +14,6 @@
 }
 
 - (id) initWithSubcategoryId:(NSString *) _subcategoryId withTitle:(NSString *) name;
+- (void) reloadView;
 
 @end

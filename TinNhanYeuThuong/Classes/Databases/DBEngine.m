@@ -98,7 +98,7 @@
     NSMutableArray *subCategories = [[NSMutableArray alloc] init];
     NSMutableDictionary *categoryDict = [[NSMutableDictionary alloc] init];
     
-    FMResultSet *s = [self executeQuery:@"SELECT * FROM category ORDER BY `index` DESC, name ASC"];
+    FMResultSet *s = [self executeQuery:@"SELECT * FROM category ORDER BY `index` ASC, name ASC"];
     
     while ([s next]) {
         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
@@ -128,22 +128,27 @@
     return categories;
 }
 
-- (NSArray *) getSMSForCategory:(NSString *) categoryId
+- (NSArray *) getSMSContentWithResultSet:(FMResultSet *) s
 {
-    [self open];
-    
     NSMutableArray *smscontents = [[NSMutableArray alloc] init];
-    FMResultSet *s = [self executeQuery:@"SELECT * FROM smscontent WHERE categoryId = ? ORDER BY `index` DESC, content ASC", categoryId];
     while ([s next]) {
         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
         item[@"id"] = [s stringForColumn:@"id"];
         NSString *content = [s stringForColumn:@"content"];
         item[@"content"] = [self decryptString:content];
+        item[@"isRead"] = [s stringForColumn:@"isRead"];
+        item[@"isFavourite"] = [s stringForColumn:@"isFavourite"];
         [smscontents addObject:item];
     }
-    
+    return smscontents;
+}
+
+- (NSArray *) getSMSForCategory:(NSString *) categoryId
+{
+    [self open];
+    FMResultSet *s = [self executeQuery:@"SELECT * FROM smscontent WHERE categoryId = ? ORDER BY `index`, content", categoryId];
+    NSArray *smscontents = [self getSMSContentWithResultSet:s];
     [self close];
-    
     return smscontents;
 }
 
@@ -151,15 +156,9 @@
 {
     [self open];
     
-    NSMutableArray *smscontents = [[NSMutableArray alloc] init];
-    FMResultSet *s = [self executeQuery:@"SELECT * FROM smscontent WHERE isFavourite = 1 ORDER BY `index` DESC, content ASC"];
-    while ([s next]) {
-        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-        NSString *content = [s stringForColumn:@"content"];
-        item[@"content"] = [self decryptString:content];
-        [smscontents addObject:item];
-    }
-    
+    FMResultSet *s = [self executeQuery:@"SELECT * FROM smscontent WHERE isFavourite = 1 ORDER BY `index`, content"];
+    NSArray *smscontents = [self getSMSContentWithResultSet:s];
+
     [self close];
     
     return smscontents;
@@ -169,15 +168,9 @@
 {
     [self open];
     
-    NSMutableArray *smscontents = [[NSMutableArray alloc] init];
-    FMResultSet *s = [self executeQuery:@"SELECT * FROM smscontent WHERE isRead = 1 ORDER BY `index` DESC, content ASC"];
-    while ([s next]) {
-        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-        NSString *content = [s stringForColumn:@"content"];
-        item[@"content"] = [self decryptString:content];
-        [smscontents addObject:item];
-    }
-    
+    FMResultSet *s = [self executeQuery:@"SELECT * FROM smscontent WHERE isRead = 1 ORDER BY `index`, content"];
+    NSArray *smscontents = [self getSMSContentWithResultSet:s];
+
     [self close];
     
     return smscontents;
@@ -187,18 +180,10 @@
 {
     [self open];
     
-    NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
     FMResultSet *s = [self executeQuery:@"SELECT * FROM smscontent WHERE id = ?", smsId];
-    while ([s next]) {
-        item[@"id"] = [s stringForColumn:@"id"];
-        NSString *content = [s stringForColumn:@"content"];
-        item[@"content"] = [self decryptString:content];
-        item[@"isRead"] = [s stringForColumn:@"isRead"];
-        item[@"isFavourite"] = [s stringForColumn:@"isFavourite"];
-    }
-    
+    NSArray *smscontents = [self getSMSContentWithResultSet:s];
     [self close];
     
-    return item;
+    return smscontents[0];
 }
 @end

@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 kakaolabs. All rights reserved.
 //
 
+#import "UIViewController+MessageHandle.h"
 #import "APIEngine+SMS.h"
 #import "DBEngine.h"
 #import "SMSViewController.h"
@@ -28,12 +29,11 @@
     [super viewDidLoad];
     titleLabel.text = [titleName uppercaseString];
     
-    UINib *nibFile = [UINib nibWithNibName:@"SubcategoryViewCell"
-                                    bundle:[NSBundle mainBundle]];
-    [categoriesTable registerNib: nibFile
-          forCellReuseIdentifier:@"SubcategoryViewCell"];
-    categoriesTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    NSString *cellNibFile = @"SubcategoryViewCell";
+    UINib *cellNib = [UINib nibWithNibName:cellNibFile bundle:nil];
+    [categoriesTable registerNib:cellNib forCellReuseIdentifier:cellNibFile];
     
+    categoriesTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     [self reloadView];
 }
 
@@ -85,17 +85,33 @@
 #pragma mark - TableDataSource
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60.0;
+    return 90.0;
+}
+
+- (NSArray *) rightButtons
+{
+    NSMutableArray *rightButtons = [NSMutableArray new];
+    UIColor *moreButtonColor = [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0];
+    [rightButtons sw_addUtilityButtonWithColor: moreButtonColor
+                                         title:@"Send"];
+//    UIColor *deleteButtonColor = [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f];
+//    [rightButtons sw_addUtilityButtonWithColor:deleteButtonColor
+//                                         title:@"Delete"];
+    return rightButtons;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellNibFile = @"SubcategoryViewCell";
-    SubcategoryViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellNibFile];
+    SubcategoryViewCell *cell = (SubcategoryViewCell *)[tableView dequeueReusableCellWithIdentifier:cellNibFile];
     
-    if (!cell) {
-        cell = (SubcategoryViewCell *)[[NSClassFromString(cellNibFile) alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellNibFile];
-    }
+    SubcategoryViewCell __weak *weakCell = cell;
+    [cell setAppearanceWithBlock:^{
+        weakCell.rightUtilityButtons = [self rightButtons];
+        weakCell.delegate = self;
+        weakCell.containingTableView = tableView;
+    } force:NO];
+    [cell setCellHeight:cell.frame.size.height];
     
     NSDictionary *item = listItem[indexPath.row];
     BOOL isSelected = selectedIndex == indexPath.row;
@@ -106,10 +122,33 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    
-    SMSViewController *controller = [[SMSViewController alloc] initWithData:listItem atIndex:(int) indexPath.row];
+    index = (int) indexPath.row;
+    SMSViewController *controller = [[SMSViewController alloc] initWithData:listItem atIndex:index];
     [self presentViewController:controller animated:YES completion:^{}];
-    //[self.navigationController pushViewController:controller animated:YES];
 }
 
+#pragma mark - SWTableViewCell delegate
+- (void) swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
+{
+    switch (index) {
+        case 0:
+        {
+            SubcategoryViewCell *subCategoryCell = (SubcategoryViewCell *) cell;
+            NSString *content = [subCategoryCell.contentText.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            [self presentViewControllerToSendSMSWithContent:content];
+            break;
+        }
+    }
+}
+
+- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell
+{
+    return YES;
+}
+
+#pragma mark - MFMessageHandle
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    [self messageComposeViewController:controller didFinishWithResult:result withSMSId:listItem[index][@"id"]];
+}
 @end

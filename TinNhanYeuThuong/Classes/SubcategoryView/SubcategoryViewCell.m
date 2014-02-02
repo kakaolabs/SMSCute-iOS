@@ -9,29 +9,14 @@
 #import "SubcategoryViewCell.h"
 
 @implementation SubcategoryViewCell
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-    }
-    return self;
-}
+@synthesize data, contentText;
 
 - (void) setUpCellWithDictionary:(NSDictionary *) dict isSelected:(BOOL) isSelected
 {
-    data = dict;
-    contentText.scrollEnabled = NO;
-    contentText.text = data[@"content"];
-    
-    if (isSelected) {
-        self.backgroundColor = SELECTED_BACKGROUND_COLOR;
-        contentText.textColor = [UIColor whiteColor];
-    } else {
-        self.backgroundColor = [UIColor clearColor];
-        contentText.textColor = TEXT_COLOR;
-    }
-
+    self.data = dict;
+    self.contentText.scrollEnabled = NO;
+    self.contentText.text = self.data[@"content"];
+    titleLabel.text = [self.data[@"content"] componentsSeparatedByString:@"\n"][0];
 }
 
 @end

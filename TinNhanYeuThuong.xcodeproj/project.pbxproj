@@ -112,6 +112,7 @@
 		E793179018925E2C00E312FF /* TinNhanYeuThuongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E793178F18925E2C00E312FF /* TinNhanYeuThuongTests.m */; };
 		E7E49E4518949B20000884BE /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E49E3A18949B20000884BE /* ProximaNova-Bold.ttf */; };
 		E7E49E4618949B20000884BE /* ProximaNova-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E49E3B18949B20000884BE /* ProximaNova-Regular.ttf */; };
+		E7EB5B43189DFC9900A3EE76 /* UIViewController+MessageHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = E7EB5B42189DFC9900A3EE76 /* UIViewController+MessageHandle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,6 +278,8 @@
 		E793178F18925E2C00E312FF /* TinNhanYeuThuongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinNhanYeuThuongTests.m; sourceTree = "<group>"; };
 		E7E49E3A18949B20000884BE /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
 		E7E49E3B18949B20000884BE /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
+		E7EB5B41189DFC9900A3EE76 /* UIViewController+MessageHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MessageHandle.h"; path = "TinNhanYeuThuong/Libraries/UIViewController+MessageHandle.h"; sourceTree = "<group>"; };
+		E7EB5B42189DFC9900A3EE76 /* UIViewController+MessageHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MessageHandle.m"; path = "TinNhanYeuThuong/Libraries/UIViewController+MessageHandle.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +339,8 @@
 			children = (
 				E76650D01896213800F90814 /* NSString */,
 				E74A7FA61894FE0000E5BEEB /* Fonts */,
+				E7EB5B41189DFC9900A3EE76 /* UIViewController+MessageHandle.h */,
+				E7EB5B42189DFC9900A3EE76 /* UIViewController+MessageHandle.m */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -882,6 +887,7 @@
 				E74A7FEF1894FE1400E5BEEB /* UIDevice-Hardware.m in Sources */,
 				E74A7F931894F7E700E5BEEB /* APIEngine.m in Sources */,
 				E76FC15D189A2DEA00250C19 /* DBEngine+Encrypt.m in Sources */,
+				E7EB5B43189DFC9900A3EE76 /* UIViewController+MessageHandle.m in Sources */,
 				E74A7FEB1894FE1400E5BEEB /* SSUUID.m in Sources */,
 				E74A7FDF1894FE1400E5BEEB /* SSAccessoryInfo.m in Sources */,
 				E74A7FE11894FE1400E5BEEB /* SSBatteryInfo.m in Sources */,

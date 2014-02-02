@@ -11,6 +11,7 @@
                 <outlet property="messageLabel" destination="rtc-ck-R5H" id="fa4-6w-bcH"/>
                 <outlet property="messageView" destination="r0u-Kf-2kX" id="8hS-hG-0xV"/>
                 <outlet property="shareButton" destination="0yg-ZG-HCa" id="70s-11-6Dd"/>
+                <outlet property="titleLabel" destination="5tj-kJ-0oz" id="syz-l8-DOc"/>
                 <outlet property="view" destination="1" id="STh-0t-6cf"/>
             </connections>
         </placeholder>
@@ -70,7 +71,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5tj-kJ-0oz" customClass="CustomFontUILabel">
-                            <rect key="frame" x="58" y="14" width="146" height="21"/>
+                            <rect key="frame" x="87" y="14" width="146" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -95,8 +96,8 @@
     </objects>
     <resources>
         <image name="close-btn.png" width="15" height="15"/>
-        <image name="like-btn-selected.png" width="15" height="15"/>
-        <image name="like-btn.png" width="15" height="15"/>
+        <image name="like-btn-selected.png" width="15" height="12"/>
+        <image name="like-btn.png" width="15" height="12"/>
         <image name="share-btn.png" width="15" height="15"/>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import <MessageUI/MessageUI.h>
+#import "UIViewController+MessageHandle.h"
 #import "DBEngine.h"
 #import "JASidePanelController.h"
 #import "MainViewController.h"
@@ -52,11 +53,17 @@
     likeButton.selected = [item[@"isFavourite"] intValue] == 1;
 }
 
+- (void) setUpTitleLabel
+{
+    titleLabel.text = [NSString stringWithFormat:@"%d/%d", (index + 1), (int) data.count];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setUpPageViewController];
     [self setUpLikeButton];
+    [self setUpTitleLabel];
 }
 
 #pragma mark - Handle button
@@ -65,16 +72,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
 - (IBAction) shareButtonPressed:(id) sender
 {
-    MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
-    
-	if ([MFMessageComposeViewController canSendText]) {
-		controller.body = [data[index][@"content"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-		controller.messageComposeDelegate = self;
-		[self presentViewController:controller animated:YES completion:^{}];
-	}
+    NSString *content = [data[index][@"content"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    [self presentViewControllerToSendSMSWithContent:content];
 }
 
 - (void) hideMessageView
@@ -108,32 +109,7 @@
 # pragma mark - SMS handle
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
-	switch (result) {
-		case MessageComposeResultCancelled:
-			break;
-		case MessageComposeResultFailed:
-        {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:APP_NAME
-                                                            message:@"Unknown Error"
-														   delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles: nil];
-			[alert show];
-			break;
-        }
-		case MessageComposeResultSent:
-        {            
-            // update db
-            DBEngine *db = [DBEngine sharedEngine];
-            NSString *smsId = data[index][@"id"];
-            [db markSMSContentIsRead:smsId isRead:YES];
-			break;
-        }
-		default:
-			break;
-	}
-
-    [controller dismissViewControllerAnimated:YES completion:^{}];
+    [self messageComposeViewController:controller didFinishWithResult:result withSMSId:data[index][@"id"]];
 }
 
 # pragma mark - Page controller source
@@ -177,6 +153,7 @@
     TextViewController *controller = (TextViewController *)[pvc.viewControllers lastObject];
     index = controller.index;
     [self setUpLikeButton];
+    [self setUpTitleLabel];
 }
 
 @end

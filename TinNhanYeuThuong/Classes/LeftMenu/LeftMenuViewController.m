@@ -38,11 +38,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    UINib *nibFile = [UINib nibWithNibName:@"LeftMenuTableViewCell"
-                                    bundle:[NSBundle mainBundle]];
-    [menuTable registerNib: nibFile
-    forCellReuseIdentifier:@"LeftMenuTableViewCell"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,10 +54,11 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellNibFile = @"LeftMenuTableViewCell";
-    LeftMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellNibFile];
+    LeftMenuTableViewCell *cell = (LeftMenuTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellNibFile];
     
     if (!cell) {
-        cell = (LeftMenuTableViewCell *)[[NSClassFromString(cellNibFile) alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellNibFile];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellNibFile owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
     NSString *iconPath = listItemIcons[indexPath.row];

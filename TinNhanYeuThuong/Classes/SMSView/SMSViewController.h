@@ -15,9 +15,9 @@
     IBOutlet UIButton *closeButton;
     IBOutlet UIButton *shareButton;
     IBOutlet UIButton *likeButton;
-    IBOutlet UIButton *convertButton;
     IBOutlet UIView *messageView;
     IBOutlet UILabel *messageLabel;
+    IBOutlet UILabel *titleLabel;
     
     UIPageViewController *pageController;
     

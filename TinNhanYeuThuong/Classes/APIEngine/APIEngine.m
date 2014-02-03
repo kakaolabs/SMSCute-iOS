@@ -34,12 +34,12 @@
 
 - (NSString *) getAPIKey
 {
-    return @"70c0d458-600d-4ae9-a0a7-9d8d53455b43";
+    return API_KEY;
 }
 
 - (NSString *) getAPISecret
 {
-    return @"0f2d5df8-95fa-48f0-b875-4b1fcea1a158";
+    return API_SECRET;
 }
 
 - (NSString *) calculateSignatureWithPath:(NSString *) path withParams:(NSDictionary *) params withData:(NSDictionary *) data

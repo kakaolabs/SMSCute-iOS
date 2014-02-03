@@ -140,6 +140,13 @@
         item[@"isFavourite"] = [s stringForColumn:@"isFavourite"];
         [smscontents addObject:item];
     }
+    
+    [smscontents sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSDictionary *item1 = (NSDictionary *) obj1;
+        NSDictionary *item2 = (NSDictionary *) obj2;
+        return [item1[@"content"] compare:item2[@"content"]];
+    }];
+    
     return smscontents;
 }
 

@@ -75,6 +75,11 @@
         for (NSDictionary *item in items) {
             [listItem addObject:item];
         }
+        [listItem sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            NSDictionary *item1 = (NSDictionary *) obj1;
+            NSDictionary *item2 = (NSDictionary *) obj2;
+            return [item1[@"content"] compare:item2[@"content"]];
+        }];
         [categoriesTable reloadData];
         
         [self insertSMSToDB];
@@ -94,9 +99,6 @@
     UIColor *moreButtonColor = [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0];
     [rightButtons sw_addUtilityButtonWithColor: moreButtonColor
                                          title:@"Send"];
-//    UIColor *deleteButtonColor = [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f];
-//    [rightButtons sw_addUtilityButtonWithColor:deleteButtonColor
-//                                         title:@"Delete"];
     return rightButtons;
 }
 
@@ -112,6 +114,7 @@
         weakCell.containingTableView = tableView;
     } force:NO];
     [cell setCellHeight:cell.frame.size.height];
+    [cell setBackgroundColor:[UIColor clearColor]];
     
     NSDictionary *item = listItem[indexPath.row];
     BOOL isSelected = selectedIndex == indexPath.row;

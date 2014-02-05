@@ -10,6 +10,6 @@
 
 @interface DBEngine (Encrypt)
 
-- (NSString *) encryptString:(NSString *) input;
-- (NSString *) decryptString:(NSString *) input;
+- (NSData *) encryptString:(NSString *) input;
+- (NSString *) decryptData:(NSData *) input;
 @end

@@ -56,7 +56,7 @@
 
 - (void) insertSMSWithDict:(NSDictionary *) dict categoryId:(NSString *)categoryId
 {
-    NSString *encryptContent = [self encryptString:dict[@"content"]];
+    NSData *encryptContent = [self encryptString:dict[@"content"]];
     
     FMResultSet *s = [self executeQuery:@"SELECT COUNT(*) FROM smscontent WHERE id = ?", dict[@"id"]];
     [s next];
@@ -134,8 +134,8 @@
     while ([s next]) {
         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
         item[@"id"] = [s stringForColumn:@"id"];
-        NSString *content = [s stringForColumn:@"content"];
-        item[@"content"] = [self decryptString:content];
+        NSData *content = [s dataForColumn:@"content"];
+        item[@"content"] = [self decryptData:content];
         item[@"isRead"] = [s stringForColumn:@"isRead"];
         item[@"isFavourite"] = [s stringForColumn:@"isFavourite"];
         [smscontents addObject:item];

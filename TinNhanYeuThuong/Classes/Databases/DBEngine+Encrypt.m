@@ -6,18 +6,33 @@
 //  Copyright (c) 2014 kakaolabs. All rights reserved.
 //
 
+#import "RNCryptor.h"
+#import "RNEncryptor.h"
+#import "RNDecryptor.h"
 #import "DBEngine+Encrypt.h"
 
 @implementation DBEngine (Encrypt)
 
-- (NSString *) encryptString:(NSString *) input
+- (NSData *) encryptString:(NSString *) input
 {
-    return input;
+    NSData *data = [input dataUsingEncoding:NSUnicodeStringEncoding];
+    NSError *error;
+    NSData *output = [RNEncryptor encryptData:data
+                                        withSettings:kRNCryptorAES256Settings
+                                            password:API_SECRET
+                                               error:&error];
+
+    return output;
 }
 
-- (NSString *) decryptString:(NSString *) input
+- (NSString *) decryptData:(NSData *) input
 {
-    return input;
+    NSError *error;
+    NSData *decryptedData = [RNDecryptor decryptData:input
+                                        withPassword:API_SECRET
+                                               error:&error];
+    NSString *output = [[NSString alloc] initWithData:decryptedData encoding:NSUnicodeStringEncoding];
+    return output;
 }
 
 @end

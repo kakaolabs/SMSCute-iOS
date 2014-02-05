@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KKGAViewController.h"
 
-@interface TextViewController : UIViewController {
+
+@interface TextViewController : KKGAViewController {
     NSString *text;
     IBOutlet UITextView *textView;
 }

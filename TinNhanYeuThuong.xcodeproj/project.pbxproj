@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B957F483C3F7496A817407C7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2928991B84A74F92B5F535CD /* libPods.a */; };
+		E731488E18A1EC7200D9ED9B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E731488D18A1EC7200D9ED9B /* AdSupport.framework */; };
+		E731489018A1EC7D00D9ED9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E731488F18A1EC7D00D9ED9B /* CoreData.framework */; };
+		E731489218A1EC8700D9ED9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E731489118A1EC8700D9ED9B /* SystemConfiguration.framework */; };
+		E731489618A1ECB700D9ED9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E731489518A1ECB700D9ED9B /* libz.dylib */; };
+		E731489F18A1ECFA00D9ED9B /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E731489E18A1ECFA00D9ED9B /* libGoogleAnalyticsServices.a */; };
+		E73148A218A1EE4C00D9ED9B /* KKGAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73148A118A1EE4C00D9ED9B /* KKGAViewController.m */; };
 		E732E5541896721A00409B4E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E732E5531896721A00409B4E /* QuartzCore.framework */; };
 		E732E58118969BB400409B4E /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E732E57C18969BB400409B4E /* BaseTableViewCell.m */; };
 		E732E58218969BB400409B4E /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E732E57D18969BB400409B4E /* BaseTableViewCell.xib */; };
@@ -128,6 +134,20 @@
 /* Begin PBXFileReference section */
 		2928991B84A74F92B5F535CD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E48955E1D634C1F90DE1A1F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E731488D18A1EC7200D9ED9B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		E731488F18A1EC7D00D9ED9B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E731489118A1EC8700D9ED9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E731489318A1ECAC00D9ED9B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		E731489518A1ECB700D9ED9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E731489818A1ECFA00D9ED9B /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		E731489918A1ECFA00D9ED9B /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		E731489A18A1ECFA00D9ED9B /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		E731489B18A1ECFA00D9ED9B /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		E731489C18A1ECFA00D9ED9B /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		E731489D18A1ECFA00D9ED9B /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		E731489E18A1ECFA00D9ED9B /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		E73148A018A1EE4C00D9ED9B /* KKGAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKGAViewController.h; path = TinNhanYeuThuong/Libraries/KKGAViewController.h; sourceTree = "<group>"; };
+		E73148A118A1EE4C00D9ED9B /* KKGAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKGAViewController.m; path = TinNhanYeuThuong/Libraries/KKGAViewController.m; sourceTree = "<group>"; };
 		E732E5531896721A00409B4E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E732E57B18969BB400409B4E /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		E732E57C18969BB400409B4E /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
@@ -287,13 +307,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E75E02DC1898F32900961FF3 /* libsqlite3.dylib in Frameworks */,
+				E731488E18A1EC7200D9ED9B /* AdSupport.framework in Frameworks */,
+				E793176D18925E2B00E312FF /* CoreGraphics.framework in Frameworks */,
+				E731489018A1EC7D00D9ED9B /* CoreData.framework in Frameworks */,
+				E793176B18925E2B00E312FF /* Foundation.framework in Frameworks */,
 				E75E02D51898B10C00961FF3 /* MessageUI.framework in Frameworks */,
 				E732E5541896721A00409B4E /* QuartzCore.framework in Frameworks */,
-				E793176D18925E2B00E312FF /* CoreGraphics.framework in Frameworks */,
 				E793176F18925E2B00E312FF /* UIKit.framework in Frameworks */,
-				E793176B18925E2B00E312FF /* Foundation.framework in Frameworks */,
+				E731489218A1EC8700D9ED9B /* SystemConfiguration.framework in Frameworks */,
+				E731489F18A1ECFA00D9ED9B /* libGoogleAnalyticsServices.a in Frameworks */,
 				B957F483C3F7496A817407C7 /* libPods.a in Frameworks */,
+				E75E02DC1898F32900961FF3 /* libsqlite3.dylib in Frameworks */,
+				E731489618A1ECB700D9ED9B /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +335,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E731489718A1ECFA00D9ED9B /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				E731489818A1ECFA00D9ED9B /* GAI.h */,
+				E731489918A1ECFA00D9ED9B /* GAIDictionaryBuilder.h */,
+				E731489A18A1ECFA00D9ED9B /* GAIFields.h */,
+				E731489B18A1ECFA00D9ED9B /* GAILogger.h */,
+				E731489C18A1ECFA00D9ED9B /* GAITrackedViewController.h */,
+				E731489D18A1ECFA00D9ED9B /* GAITracker.h */,
+				E731489E18A1ECFA00D9ED9B /* libGoogleAnalyticsServices.a */,
+			);
+			name = GoogleAnalytics;
+			path = TinNhanYeuThuong/Vendors/GoogleAnalytics;
+			sourceTree = "<group>";
+		};
 		E732E57A18969BB400409B4E /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +381,8 @@
 				E74A7FA61894FE0000E5BEEB /* Fonts */,
 				E7EB5B41189DFC9900A3EE76 /* UIViewController+MessageHandle.h */,
 				E7EB5B42189DFC9900A3EE76 /* UIViewController+MessageHandle.m */,
+				E73148A018A1EE4C00D9ED9B /* KKGAViewController.h */,
+				E73148A118A1EE4C00D9ED9B /* KKGAViewController.m */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -348,6 +390,7 @@
 		E74A7F331894A36F00E5BEEB /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				E731489718A1ECFA00D9ED9B /* GoogleAnalytics */,
 				E74A7FAF1894FE1400E5BEEB /* System Services */,
 				E74A7FD21894FE1400E5BEEB /* UUID */,
 			);
@@ -597,6 +640,11 @@
 		E793176918925E2B00E312FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E731489518A1ECB700D9ED9B /* libz.dylib */,
+				E731489318A1ECAC00D9ED9B /* AddressBook.framework */,
+				E731489118A1EC8700D9ED9B /* SystemConfiguration.framework */,
+				E731488F18A1EC7D00D9ED9B /* CoreData.framework */,
+				E731488D18A1EC7200D9ED9B /* AdSupport.framework */,
 				E75E02DB1898F32900961FF3 /* libsqlite3.dylib */,
 				E75E02D41898B10C00961FF3 /* MessageUI.framework */,
 				E732E5531896721A00409B4E /* QuartzCore.framework */,
@@ -875,6 +923,7 @@
 				E74A7FE41894FE1400E5BEEB /* SSHardwareInfo.m in Sources */,
 				E74A7FDC1894FE1400E5BEEB /* SystemServices.m in Sources */,
 				E74A7FE81894FE1400E5BEEB /* SSNetworkInfo.m in Sources */,
+				E73148A218A1EE4C00D9ED9B /* KKGAViewController.m in Sources */,
 				E732E58118969BB400409B4E /* BaseTableViewCell.m in Sources */,
 				E74A7FE51894FE1400E5BEEB /* SSJailbreakCheck.m in Sources */,
 				E76650D31896213800F90814 /* NSString+sha1.m in Sources */,
@@ -1037,6 +1086,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TinNhanYeuThuong/TinNhanYeuThuong-Prefix.pch";
 				INFOPLIST_FILE = "TinNhanYeuThuong/TinNhanYeuThuong-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/DATA/DEVELOPMENT/KAKAOLABS/TinNhanYeuThuong/TinNhanYeuThuong/Vendors/GoogleAnalytics,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1052,6 +1105,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TinNhanYeuThuong/TinNhanYeuThuong-Prefix.pch";
 				INFOPLIST_FILE = "TinNhanYeuThuong/TinNhanYeuThuong-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/DATA/DEVELOPMENT/KAKAOLABS/TinNhanYeuThuong/TinNhanYeuThuong/Vendors/GoogleAnalytics,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

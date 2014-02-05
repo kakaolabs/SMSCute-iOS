@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KKGAViewController.h"
 
 @class JASidePanelController;
 
-@interface BaseViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
+@interface BaseViewController : KKGAViewController<UITableViewDataSource, UITableViewDelegate> {
     IBOutlet UIButton *leftButton;
     IBOutlet UILabel *titleLabel;
     IBOutlet UITableView *categoriesTable;

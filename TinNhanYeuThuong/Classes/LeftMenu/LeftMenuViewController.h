@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KKGAViewController.h"
 
 @class JASidePanelController;
 @class MainViewController;
 
-@interface LeftMenuViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
+@interface LeftMenuViewController : KKGAViewController<UITableViewDataSource, UITableViewDelegate> {
     IBOutlet UITableView *menuTable;
     
     NSMutableArray *listItemIcons;

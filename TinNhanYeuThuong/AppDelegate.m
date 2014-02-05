@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 kakaolabs. All rights reserved.
 //
 
+#import "GAI.h"
 #import "JASidePanelController.h"
 
 #import "AppDelegate.h"
@@ -44,11 +45,24 @@
     [database createTables];
 }
 
+- (void) setUpGoogleAnalytics
+{
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    // Initialize tracker.
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:GA_ID];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setUpRootViewController];
     [self setUpDatabase];
+    [self setUpGoogleAnalytics];
     return YES;
 }
 

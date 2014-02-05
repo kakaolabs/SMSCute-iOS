@@ -9,8 +9,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import "KKGAViewController.h"
 
-@interface SMSViewController : UIViewController<MFMessageComposeViewControllerDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
+@interface SMSViewController : KKGAViewController<MFMessageComposeViewControllerDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
     
     IBOutlet UIButton *closeButton;
     IBOutlet UIButton *shareButton;

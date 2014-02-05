@@ -14,6 +14,8 @@
 		E731489618A1ECB700D9ED9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E731489518A1ECB700D9ED9B /* libz.dylib */; };
 		E731489F18A1ECFA00D9ED9B /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E731489E18A1ECFA00D9ED9B /* libGoogleAnalyticsServices.a */; };
 		E73148A218A1EE4C00D9ED9B /* KKGAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73148A118A1EE4C00D9ED9B /* KKGAViewController.m */; };
+		E73148A918A1F32500D9ED9B /* FBEncryptorAES.m in Sources */ = {isa = PBXBuildFile; fileRef = E73148A618A1F32500D9ED9B /* FBEncryptorAES.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E73148AA18A1F32500D9ED9B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E73148A818A1F32500D9ED9B /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E732E5541896721A00409B4E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E732E5531896721A00409B4E /* QuartzCore.framework */; };
 		E732E58118969BB400409B4E /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E732E57C18969BB400409B4E /* BaseTableViewCell.m */; };
 		E732E58218969BB400409B4E /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E732E57D18969BB400409B4E /* BaseTableViewCell.xib */; };
@@ -148,6 +150,10 @@
 		E731489E18A1ECFA00D9ED9B /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		E73148A018A1EE4C00D9ED9B /* KKGAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKGAViewController.h; path = TinNhanYeuThuong/Libraries/KKGAViewController.h; sourceTree = "<group>"; };
 		E73148A118A1EE4C00D9ED9B /* KKGAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKGAViewController.m; path = TinNhanYeuThuong/Libraries/KKGAViewController.m; sourceTree = "<group>"; };
+		E73148A518A1F32500D9ED9B /* FBEncryptorAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEncryptorAES.h; sourceTree = "<group>"; };
+		E73148A618A1F32500D9ED9B /* FBEncryptorAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEncryptorAES.m; sourceTree = "<group>"; };
+		E73148A718A1F32500D9ED9B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		E73148A818A1F32500D9ED9B /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		E732E5531896721A00409B4E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E732E57B18969BB400409B4E /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		E732E57C18969BB400409B4E /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
@@ -350,6 +356,18 @@
 			path = TinNhanYeuThuong/Vendors/GoogleAnalytics;
 			sourceTree = "<group>";
 		};
+		E73148A418A1F32500D9ED9B /* FBEncryptor */ = {
+			isa = PBXGroup;
+			children = (
+				E73148A518A1F32500D9ED9B /* FBEncryptorAES.h */,
+				E73148A618A1F32500D9ED9B /* FBEncryptorAES.m */,
+				E73148A718A1F32500D9ED9B /* NSData+Base64.h */,
+				E73148A818A1F32500D9ED9B /* NSData+Base64.m */,
+			);
+			name = FBEncryptor;
+			path = TinNhanYeuThuong/Vendors/FBEncryptor;
+			sourceTree = "<group>";
+		};
 		E732E57A18969BB400409B4E /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +408,7 @@
 		E74A7F331894A36F00E5BEEB /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				E73148A418A1F32500D9ED9B /* FBEncryptor */,
 				E731489718A1ECFA00D9ED9B /* GoogleAnalytics */,
 				E74A7FAF1894FE1400E5BEEB /* System Services */,
 				E74A7FD21894FE1400E5BEEB /* UUID */,
@@ -959,6 +978,8 @@
 				E74A7FAC1894FE0000E5BEEB /* UIViewController+Font.m in Sources */,
 				E793177718925E2B00E312FF /* main.m in Sources */,
 				E74E86621896B2C300BF4E6A /* SubcategoryViewCell.m in Sources */,
+				E73148A918A1F32500D9ED9B /* FBEncryptorAES.m in Sources */,
+				E73148AA18A1F32500D9ED9B /* NSData+Base64.m in Sources */,
 				E74A7FE21894FE1400E5BEEB /* SSCarrierInfo.m in Sources */,
 				E74A7FE31894FE1400E5BEEB /* SSDiskInfo.m in Sources */,
 				E732E58818969BD300409B4E /* HomeViewController.m in Sources */,

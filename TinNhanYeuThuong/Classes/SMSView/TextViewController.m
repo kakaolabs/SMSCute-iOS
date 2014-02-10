@@ -16,7 +16,7 @@
 {
     self = [super initWithNibName:@"TextViewController" bundle:nil];
     if (self) {
-        text = [NSString stringWithFormat:@"\n\n\n\n%@\n\n\n\n\n", _text];
+        text = [NSString stringWithFormat:@"\n\n\n%@\n\n\n\n\n", _text];
         self.index = i;
     }
     return self;
@@ -26,6 +26,7 @@
 {
     [super viewDidLoad];
     textView.text = text;
+    textView.selectable = NO;
 }
 
 @end

@@ -191,6 +191,10 @@
     NSArray *smscontents = [self getSMSContentWithResultSet:s];
     [self close];
     
-    return smscontents[0];
+    if (smscontents.count) {
+        return smscontents[0];
+    } else {
+        return @{};
+    }
 }
 @end

@@ -118,6 +118,9 @@
 		E793178618925E2C00E312FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E793176E18925E2B00E312FF /* UIKit.framework */; };
 		E793178E18925E2C00E312FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E793178C18925E2C00E312FF /* InfoPlist.strings */; };
 		E793179018925E2C00E312FF /* TinNhanYeuThuongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E793178F18925E2C00E312FF /* TinNhanYeuThuongTests.m */; };
+		E7B6B7BD18A8C56D00B07E50 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B6B7BC18A8C56D00B07E50 /* libGoogleAdMobAds.a */; };
+		E7B6B7BF18A8C74100B07E50 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B6B7BE18A8C74000B07E50 /* AVFoundation.framework */; };
+		E7B6B7C118A8C7F800B07E50 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B6B7C018A8C7F800B07E50 /* StoreKit.framework */; };
 		E7E49E4518949B20000884BE /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E49E3A18949B20000884BE /* ProximaNova-Bold.ttf */; };
 		E7E49E4618949B20000884BE /* ProximaNova-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E49E3B18949B20000884BE /* ProximaNova-Regular.ttf */; };
 		E7EB5B43189DFC9900A3EE76 /* UIViewController+MessageHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = E7EB5B42189DFC9900A3EE76 /* UIViewController+MessageHandle.m */; };
@@ -302,6 +305,18 @@
 		E793178B18925E2C00E312FF /* TinNhanYeuThuongTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TinNhanYeuThuongTests-Info.plist"; sourceTree = "<group>"; };
 		E793178D18925E2C00E312FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E793178F18925E2C00E312FF /* TinNhanYeuThuongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinNhanYeuThuongTests.m; sourceTree = "<group>"; };
+		E7B6B7B318A8C56D00B07E50 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
+		E7B6B7B418A8C56D00B07E50 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
+		E7B6B7B518A8C56D00B07E50 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
+		E7B6B7B618A8C56D00B07E50 /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
+		E7B6B7B718A8C56D00B07E50 /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		E7B6B7B818A8C56D00B07E50 /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
+		E7B6B7B918A8C56D00B07E50 /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		E7B6B7BA18A8C56D00B07E50 /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
+		E7B6B7BB18A8C56D00B07E50 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
+		E7B6B7BC18A8C56D00B07E50 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		E7B6B7BE18A8C74000B07E50 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E7B6B7C018A8C7F800B07E50 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E7E49E3A18949B20000884BE /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
 		E7E49E3B18949B20000884BE /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
 		E7EB5B41189DFC9900A3EE76 /* UIViewController+MessageHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MessageHandle.h"; path = "TinNhanYeuThuong/Libraries/UIViewController+MessageHandle.h"; sourceTree = "<group>"; };
@@ -314,13 +329,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E731488E18A1EC7200D9ED9B /* AdSupport.framework in Frameworks */,
+				E7B6B7BF18A8C74100B07E50 /* AVFoundation.framework in Frameworks */,
 				E793176D18925E2B00E312FF /* CoreGraphics.framework in Frameworks */,
 				E731489018A1EC7D00D9ED9B /* CoreData.framework in Frameworks */,
 				E793176B18925E2B00E312FF /* Foundation.framework in Frameworks */,
 				E75E02D51898B10C00961FF3 /* MessageUI.framework in Frameworks */,
 				E732E5541896721A00409B4E /* QuartzCore.framework in Frameworks */,
 				E793176F18925E2B00E312FF /* UIKit.framework in Frameworks */,
+				E7B6B7C118A8C7F800B07E50 /* StoreKit.framework in Frameworks */,
 				E731489218A1EC8700D9ED9B /* SystemConfiguration.framework in Frameworks */,
+				E7B6B7BD18A8C56D00B07E50 /* libGoogleAdMobAds.a in Frameworks */,
 				E731489F18A1ECFA00D9ED9B /* libGoogleAnalyticsServices.a in Frameworks */,
 				B957F483C3F7496A817407C7 /* libPods.a in Frameworks */,
 				E75E02DC1898F32900961FF3 /* libsqlite3.dylib in Frameworks */,
@@ -409,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				E73148A418A1F32500D9ED9B /* FBEncryptor */,
+				E7B6B7B218A8C56D00B07E50 /* GoogleAdmod */,
 				E731489718A1ECFA00D9ED9B /* GoogleAnalytics */,
 				E74A7FAF1894FE1400E5BEEB /* System Services */,
 				E74A7FD21894FE1400E5BEEB /* UUID */,
@@ -659,6 +678,8 @@
 		E793176918925E2B00E312FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7B6B7C018A8C7F800B07E50 /* StoreKit.framework */,
+				E7B6B7BE18A8C74000B07E50 /* AVFoundation.framework */,
 				E731489518A1ECB700D9ED9B /* libz.dylib */,
 				E731489318A1ECAC00D9ED9B /* AddressBook.framework */,
 				E731489118A1EC8700D9ED9B /* SystemConfiguration.framework */,
@@ -735,6 +756,24 @@
 			);
 			name = Resources;
 			path = TinNhanYeuThuong/Resources;
+			sourceTree = "<group>";
+		};
+		E7B6B7B218A8C56D00B07E50 /* GoogleAdmod */ = {
+			isa = PBXGroup;
+			children = (
+				E7B6B7B318A8C56D00B07E50 /* GADAdMobExtras.h */,
+				E7B6B7B418A8C56D00B07E50 /* GADAdNetworkExtras.h */,
+				E7B6B7B518A8C56D00B07E50 /* GADAdSize.h */,
+				E7B6B7B618A8C56D00B07E50 /* GADBannerView.h */,
+				E7B6B7B718A8C56D00B07E50 /* GADBannerViewDelegate.h */,
+				E7B6B7B818A8C56D00B07E50 /* GADInterstitial.h */,
+				E7B6B7B918A8C56D00B07E50 /* GADInterstitialDelegate.h */,
+				E7B6B7BA18A8C56D00B07E50 /* GADRequest.h */,
+				E7B6B7BB18A8C56D00B07E50 /* GADRequestError.h */,
+				E7B6B7BC18A8C56D00B07E50 /* libGoogleAdMobAds.a */,
+			);
+			name = GoogleAdmod;
+			path = TinNhanYeuThuong/Vendors/GoogleAdmod;
 			sourceTree = "<group>";
 		};
 		E7E49E3218949A52000884BE /* LeftMenu */ = {
@@ -1060,6 +1099,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1092,6 +1132,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1110,6 +1151,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/DATA/DEVELOPMENT/KAKAOLABS/TinNhanYeuThuong/TinNhanYeuThuong/Vendors/GoogleAnalytics,
+					/DATA/DEVELOPMENT/KAKAOLABS/TinNhanYeuThuong/TinNhanYeuThuong/Vendors/GoogleAdmod,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1129,6 +1171,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/DATA/DEVELOPMENT/KAKAOLABS/TinNhanYeuThuong/TinNhanYeuThuong/Vendors/GoogleAnalytics,
+					/DATA/DEVELOPMENT/KAKAOLABS/TinNhanYeuThuong/TinNhanYeuThuong/Vendors/GoogleAdmod,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

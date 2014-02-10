@@ -42,14 +42,19 @@
     [leftButton setImage:image forState:UIControlStateNormal];
 }
 
+- (void) setUpTableView
+{
+    UINib *nibFile = [UINib nibWithNibName:@"BaseTableViewCell"
+                                    bundle:[NSBundle mainBundle]];
+    [categoriesTable registerNib: nibFile
+          forCellReuseIdentifier:@"BaseTableViewCell"];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setUpLeftButton];
-    UINib *nibFile = [UINib nibWithNibName:@"BaseTableViewCell"
-                                    bundle:[NSBundle mainBundle]];
-    [categoriesTable registerNib: nibFile
-    forCellReuseIdentifier:@"BaseTableViewCell"];
+    [self setUpTableView];
 }
 
 - (void)didReceiveMemoryWarning

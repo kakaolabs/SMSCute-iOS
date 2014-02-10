@@ -7,7 +7,10 @@
 //
 
 #import "GAITrackedViewController.h"
+#import "GADBannerView.h"
 
-@interface KKGAViewController : GAITrackedViewController
+@interface KKGAViewController : GAITrackedViewController {
+    GADBannerView *bannerView;
+}
 
 @end

@@ -25,4 +25,6 @@
 
 #define GA_ID @"UA-16274581-9"
 
+#define ADMOD_ID @"a152f1c384cde98"
+
 #endif

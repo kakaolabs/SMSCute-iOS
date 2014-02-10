@@ -64,6 +64,7 @@
     [self setUpPageViewController];
     [self setUpLikeButton];
     [self setUpTitleLabel];
+    [self setUpBannerView];
 }
 
 #pragma mark - Handle button

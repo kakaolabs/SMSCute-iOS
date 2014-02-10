@@ -54,4 +54,5 @@
     [super viewDidLoad];
     [self setUpBannerView];
 }
+
 @end

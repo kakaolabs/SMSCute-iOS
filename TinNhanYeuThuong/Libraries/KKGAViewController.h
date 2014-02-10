@@ -13,4 +13,5 @@
     GADBannerView *bannerView;
 }
 
+- (void) setUpBannerView;
 @end

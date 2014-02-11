@@ -8,6 +8,7 @@
 
 #import "APIEngine+SMS.h"
 #import "DBEngine.h"
+#import "SubcategoryViewController.h"
 #import "CategoryViewController.h"
 #import "HomeViewController.h"
 
@@ -45,10 +46,40 @@
         [[DBEngine sharedEngine] insertCategoryWithDict:item parentId:nil];
         NSString *itemId = item[@"id"];
         for (NSDictionary *subItem in item[@"data"]) {
-            [[DBEngine sharedEngine] insertCategoryWithDict:subItem parentId:itemId];
+            [db insertCategoryWithDict:subItem parentId:itemId];
         }
     }
     [db close];
+}
+
+- (void) saveSMSForSubCategoryId:(NSString *) subCategoryId
+{
+    [[APIEngine sharedEngine] getDetailOfSubCategory:subCategoryId onComplete:^(id objects) {
+        NSArray *items = (NSArray *) objects;
+        DBEngine *db = [DBEngine sharedEngine];
+        [db open];
+        for (NSDictionary *dict in items) {
+            [db insertSMSWithDict:dict categoryId:subCategoryId];
+        }
+        [db close];
+    } onError:^(NSError *error) {
+    }];
+}
+
+- (void) saveFullDB
+{
+    for (NSDictionary *item in listItem) {
+        NSString *itemId = item[@"id"];
+        int type = [item[@"type"] intValue];
+        if (type == 0) {
+            for (NSDictionary *subItem in item[@"data"]) {
+                NSString *subItemId = subItem[@"id"];
+                [self saveSMSForSubCategoryId:subItemId];
+            }
+        } else {
+            [self saveSMSForSubCategoryId:itemId];
+        }
+    }
 }
 
 #pragma mark - request
@@ -76,8 +107,16 @@
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     
     NSDictionary *data = listItem[indexPath.row];
-    CategoryViewController *controller = [[CategoryViewController alloc] initWithData:data];
-    [self.navigationController pushViewController:controller animated:YES];
+    int type = [data[@"type"] intValue];
+    
+    if (type == 0) {
+        CategoryViewController *controller = [[CategoryViewController alloc] initWithData:data];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else {
+        NSString *subCategoryId = data[@"id"];
+        SubcategoryViewController *controller = [[SubcategoryViewController alloc] initWithSubcategoryId:subCategoryId withTitle:data[@"name"]];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 @end

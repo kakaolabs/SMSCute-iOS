@@ -40,9 +40,16 @@
 
 - (void) setUpDatabase
 {
-    DBEngine *database = [DBEngine sharedEngine];
-    [database open];
-    [database createTables];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *txtPath = [documentsDirectory stringByAppendingPathComponent:@"UserDatabase.sqlite"];
+    
+    if ([fileManager fileExistsAtPath:txtPath] == NO) {
+        NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"UserDatabase" ofType:@"sqlite"];
+        [fileManager copyItemAtPath:resourcePath toPath:txtPath error:&error];
+    }
 }
 
 - (void) setUpGoogleAnalytics
@@ -54,15 +61,15 @@
     // Optional: set Logger to VERBOSE for debug information.
     [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
     // Initialize tracker.
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:GA_ID];
+    [[GAI sharedInstance] trackerWithTrackingId:GA_ID];
 }
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self setUpRootViewController];
     [self setUpDatabase];
     [self setUpGoogleAnalytics];
+    [self setUpRootViewController];
     return YES;
 }
 

@@ -33,8 +33,7 @@
     // Let the runtime know which UIViewController to restore after taking
     // the user wherever the ad goes and add it to the view hierarchy.
     bannerView.rootViewController = self;
-    [self.view addSubview:bannerView];
-    bannerView.layer.zPosition = 1000.0;
+    bannerView.delegate = self;
     
     // Initiate a generic request to load it with an ad.
     GADRequest *request = [GADRequest request];
@@ -56,4 +55,11 @@
     self.screenName = NSStringFromClass([self class]);
 }
 
+
+#pragma mark - GADBannerViewDelegate
+- (void)adViewDidReceiveAd:(GADBannerView *)view
+{
+    [self.view addSubview:bannerView];
+    bannerView.layer.zPosition = 1000.0;
+}
 @end

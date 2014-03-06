@@ -101,4 +101,12 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
+
+#pragma mark - GADBannerViewDelegate
+- (void) adViewDidReceiveAd:(GADBannerView *)view
+{
+    [super adViewDidReceiveAd:view];
+    CGRect oldFrame = categoriesTable.frame;
+    categoriesTable.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, oldFrame.size.height - bannerView.frame.size.height);
+}
 @end

@@ -34,7 +34,7 @@
     pageController.dataSource = self;
     pageController.delegate = self;
     CGSize size = self.view.frame.size;
-    [[pageController view] setFrame:CGRectMake(0, 70, size.width, size.height - 70)];
+    [pageController.view setFrame:CGRectMake(0, 70, size.width, size.height - 70)];
     
     TextViewController *controller = (TextViewController *)[self viewControllerAtIndex:index];
     
@@ -43,7 +43,9 @@
     [pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     [self addChildViewController:pageController];
-    [[self view] addSubview:[pageController view]];
+    
+    pageController.view.layer.zPosition = -1000.0f;
+    [[self view] addSubview:pageController.view];
 }
 
 - (void) setUpLikeButton
@@ -157,4 +159,11 @@
     [self setUpTitleLabel];
 }
 
+#pragma mark - GADBannerViewDelegate
+- (void) adViewDidReceiveAd:(GADBannerView *)view
+{
+    [super adViewDidReceiveAd:view];
+    CGRect oldFrame = pageController.view.frame;
+    pageController.view.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, oldFrame.size.width, oldFrame.size.height - bannerView.frame.size.height);
+}
 @end

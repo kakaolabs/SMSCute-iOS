@@ -88,4 +88,9 @@
     }
 }
 
+#pragma mark - GADBannerViewDelegate
+- (void)adViewDidReceiveAd:(GADBannerView *)view
+{
+}
+
 @end

@@ -53,6 +53,7 @@
 {
     [super viewDidLoad];
     [self setUpBannerView];
+    self.screenName = NSStringFromClass([self class]);
 }
 
 @end

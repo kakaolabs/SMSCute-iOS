@@ -20,6 +20,8 @@
 
 #define SELECTED_BACKGROUND_COLOR [UIColor colorWithRed:105.0/255 green:167.0/255 blue:194.0/255 alpha:1.0]
 #define TEXT_COLOR [UIColor colorWithRed:20.0/255 green:108.0/255 blue:136.0/255 alpha:1.0]
+#define MORE_BUTTON_COLOR [UIColor colorWithRed:60.0/255 green:119.0/255 blue:139.0/255 alpha:1.0]
+#define DELETE_BUTTON_COLOR [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f]
 
 
 

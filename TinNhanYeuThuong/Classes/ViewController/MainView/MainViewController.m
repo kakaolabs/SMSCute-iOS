@@ -64,7 +64,6 @@
     if (!homeVC) {
         homeVC = [[HomeViewController alloc] initWithNibName:@"BaseViewController" bundle:nil];
     }
-    [homeVC reloadView];
     
     [self setRootView:homeVC];
 }

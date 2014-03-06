@@ -1,5 +1,5 @@
 //
-//  FavViewController.m
+//  RecentUsedViewController.m
 //  TinNhanYeuThuong
 //
 //  Created by Kien Nguyen on 1/29/14.
@@ -9,17 +9,19 @@
 #import "UIViewController+MessageHandle.h"
 #import "DBEngine.h"
 #import "SubcategoryViewCell.h"
-#import "FavViewController.h"
+#import "RecentUsedViewController.h"
 
-@implementation FavViewController
+
+@implementation RecentUsedViewController
 
 - (void) reloadView
 {
-    titleLabel.text = @"FAVOURITE SMS";
+    titleLabel.text = @"RECENTLY USED SMS";
     
     DBEngine *db = [DBEngine sharedEngine];
     [db open];
-    listItem = [[NSMutableArray alloc] initWithArray:[db getFavouriteSMS]];
+    
+    listItem = [[NSMutableArray alloc] initWithArray:[db getRecentUsedSMS]];
     [categoriesTable reloadData];
     
     [db close];
@@ -28,11 +30,9 @@
 - (NSArray *) rightButtons
 {
     NSMutableArray *rightButtons = [NSMutableArray new];
-    UIColor *moreButtonColor = [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0];
-    [rightButtons sw_addUtilityButtonWithColor: moreButtonColor
+    [rightButtons sw_addUtilityButtonWithColor: MORE_BUTTON_COLOR
                                          title:@"Send"];
-    UIColor *deleteButtonColor = [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f];
-    [rightButtons sw_addUtilityButtonWithColor:deleteButtonColor
+    [rightButtons sw_addUtilityButtonWithColor: DELETE_BUTTON_COLOR
                                          title:@"Delete"];
     return rightButtons;
 }
@@ -50,7 +50,7 @@
         case 1:
         {
             NSString *smsId = subCategoryCell.data[@"id"];
-            [[DBEngine sharedEngine] markSMSContentIsFavourite:smsId isFavourite:NO];
+            [[DBEngine sharedEngine] markSMSContentIsRead:smsId isRead:NO];
             [self reloadView];
             break;
         }

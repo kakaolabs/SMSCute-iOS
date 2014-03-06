@@ -96,8 +96,7 @@
 - (NSArray *) rightButtons
 {
     NSMutableArray *rightButtons = [NSMutableArray new];
-    UIColor *moreButtonColor = [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0];
-    [rightButtons sw_addUtilityButtonWithColor: moreButtonColor
+    [rightButtons sw_addUtilityButtonWithColor: MORE_BUTTON_COLOR
                                          title:@"Send"];
     return rightButtons;
 }

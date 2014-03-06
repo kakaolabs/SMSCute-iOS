@@ -21,15 +21,11 @@
         listItemIcons = [[NSMutableArray alloc] initWithArray:
                          @[@"home-menu.png",
                            @"recently-menu.png",
-                           @"fav-menu.png",
-                           @"fav-menu.png",
-                           @"fav-menu.png"]];
+                           @"fav-menu.png",]];
         listItemNames = [[NSMutableArray alloc] initWithArray:
                         @[@"HOME",
                           @"RECENTLY USED",
-                          @"FAVOURITE",
-                          @"NOTIFICATIONS",
-                          @"NEWS"]];
+                          @"FAVOURITE"]];
         selectedIndex = -1;
     }
     return self;
